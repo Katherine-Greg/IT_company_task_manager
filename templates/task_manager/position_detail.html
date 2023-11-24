@@ -1,9 +1,9 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-  <h1>
+  <h2>
     Position: {{ position.name }}
-  </h1>
+  </h2>
   <a href="{% url 'task_manager:position-delete' pk=position.id %}" class="btn btn-danger link-to-page">
     Delete
   </a>
@@ -14,7 +14,6 @@
 
   <div class="ml-3">
     <h4>Workers</h4>
-
     {% for worker in position.worker_set.all %}
         <hr>
         <p><strong>Username: </strong><a href="{{ worker.get_absolute_url }}">{{ worker.username }}</a></p>

@@ -9,15 +9,25 @@
     </a>
   </h1>
   {% if task_list %}
-    <ul>
-      {% for task in task_list %}
-        <li>
-          <a href="{% url "task_manager:task-detail" pk=task.id %} ">{{ task.name }}</a>: {{ task.description }}
-
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
+    <table class="table">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Priority</th>
+        <th>Deadline</th>
+      </tr>
+    {% for task in task_list %}
+      <tr>
+        <td><a href="{% url "task_manager:task-detail" pk=task.id %} ">{{ task.id }}</a></td>
+        <td>{{ task.name }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.priority }}</td>
+        <td>{{ task.deadline }}</td>
+      </tr>
+    {% endfor %}
+    </table>
+    {% else %}
     <p>There are no tasks</p>
   {% endif %}
 {% endblock %}
