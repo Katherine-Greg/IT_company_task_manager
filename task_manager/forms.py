@@ -5,7 +5,6 @@ from task_manager.models import Task, Position, Worker
 
 
 class RegisterForm(UserCreationForm):
-
     class Meta:
         model = Worker
         fields = ("first_name", "last_name", "position", "username", "password1", "password2")

@@ -9,7 +9,8 @@ from .forms import (TaskCreationForm,
                     TaskSearchForm,
                     WorkerSearchForm,
                     PositionCreationForm,
-                    PositionSearchForm, RegisterForm)
+                    PositionSearchForm,
+                    RegisterForm)
 
 from .models import Task, Position, Worker
 
@@ -31,6 +32,7 @@ def index(request: HttpRequest) -> HttpResponse:
     page_name = "index"
     num_tasks = Task.objects.count()
     num_workers = Worker.objects.count()
+    num_positions = Position.objects.count()
 
     num_visits = request.session.get("num_visits", 0)
     request.session["num_visits"] = num_visits + 1
@@ -39,6 +41,7 @@ def index(request: HttpRequest) -> HttpResponse:
         "page_name": page_name,
         "num_tasks": num_tasks,
         "num_workers": num_workers,
+        "num_positions": num_positions,
         "num_visits": num_visits + 1,
     }
 
