@@ -8,6 +8,7 @@ from django.views import generic
 from .forms import (TaskCreationForm,
                     TaskSearchForm,
                     WorkerSearchForm,
+                    WorkerUpdateForm,
                     PositionCreationForm,
                     PositionSearchForm,
                     RegisterForm)
@@ -117,6 +118,12 @@ class WorkerListView(LoginRequiredMixin, generic.ListView):
 
 class WorkerDetailView(LoginRequiredMixin, generic.DetailView):
     model = Worker
+
+
+class WorkerUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Worker
+    form_class = WorkerUpdateForm
+    success_url = reverse_lazy("task_manager:worker-list")
 
 
 class PositionListView(LoginRequiredMixin, generic.ListView):

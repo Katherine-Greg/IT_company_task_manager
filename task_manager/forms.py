@@ -46,6 +46,12 @@ class WorkerSearchForm(forms.Form):
     )
 
 
+class WorkerUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Worker
+        fields = ("first_name", "last_name", "position", "username")
+
+
 class PositionCreationForm(forms.ModelForm):
     class Meta:
         model = Position
