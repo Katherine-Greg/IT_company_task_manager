@@ -5,6 +5,12 @@
 It is a Task Manager, which will handle all possible problems during product development in your team. Everyone from the team can create Task and assign this Task to team-members.
 
 
+## Check it out!
+[Task List Project deployed to Render](https://task-manager-ohh7.onrender.com)
+
+## DB Structure
+![DB_Structure.jpg](screenshots%2FDB_Structure.jpg)
+
 ## Features
 - **Create tasks:** Team members can create tasks with deadlines and detailed descriptions.
 - **Assign tasks:** Assign tasks to specific team members based on their positions and types of tasks.
@@ -70,3 +76,23 @@ git push origin develop
 Create `New Pull Request`: 
 - Go to the original repository on GitHub and click on the `New Pull Request`.
 - Provide details about your changes and submit the pull request for review.
+
+
+## DEMO
+![main_page.jpg](screenshots%2Fmain_page.jpg)
+
+![task_list_page.jpg](screenshots%2Ftask_list_page.jpg)
+
+![task_detail_page.jpg](screenshots%2Ftask_detail_page.jpg)
+
+![create_task_page.jpg](screenshots%2Fcreate_task_page.jpg)
+
+![workers_list_page.jpg](screenshots%2Fworkers_list_page.jpg)
+
+![workers_detail_page.jpg](screenshots%2Fworkers_detail_page.jpg)
+
+![positios_list_page.jpg](screenshots%2Fpositios_list_page.jpg)
+
+![positions_detail_page.jpg](screenshots%2Fpositions_detail_page.jpg)
+
+![positions_create_page.jpg](screenshots%2Fpositions_create_page.jpg)
