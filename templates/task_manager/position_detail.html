@@ -1,0 +1,24 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+  <h2>
+    Position: {{ position.name }}
+  </h2>
+  <a href="{% url 'task_manager:position-delete' pk=position.id %}" class="btn btn-danger link-to-page">
+    Delete
+  </a>
+
+  <a href="{% url 'task_manager:position-update' pk=position.id %}" class="btn btn-secondary link-to-page">
+    Update
+  </a>
+
+  <div class="ml-3">
+    <h4>Workers</h4>
+    {% for worker in position.worker_set.all %}
+        <hr>
+        <p><strong>Username: </strong><a href="{{ worker.get_absolute_url }}">{{ worker.username }}</a></p>
+    {% empty %}
+      <p>No workers!</p>
+    {% endfor %}
+  </div>
+{% endblock %}
